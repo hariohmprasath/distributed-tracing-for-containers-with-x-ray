@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "137ed675-1c59-4a7d-a4b9-a0b46a429fa8",
+		"name": "X-Ray",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Site",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\":\"{{url}}\",\n    \"description\":\"{{url}}\",\n    \"ownerFirstName\":\"Owner first name\",\n    \"ownerLastName\":\"Owner last name\",\n    \"hostedCountry\":\"Hosted country\",\n    \"category\":\"Category\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{baseUrl}}/sites",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Sites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{baseUrl}}/sites",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Site Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{baseUrl}}/sites/details?url={{url}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sites",
+						"details"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "{{url}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Record Hit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://{{baseUrl}}/sites/hits?url={{url}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sites",
+						"hits"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "{{url}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{baseUrl}}/sites/hits?url={{url}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sites",
+						"hits"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "{{url}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Site",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{baseUrl}}/sites?url={{url}}",
+					"protocol": "http",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sites"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "{{url}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "www.er.com"
+		},
+		{
+			"key": "baseUrl",
+			"value": "testi-XrayC-1INSQS8GFHP60-1640596973.us-east-1.elb.amazonaws.com"
+		}
+	]
+}
